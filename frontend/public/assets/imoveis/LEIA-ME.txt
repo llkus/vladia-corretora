@@ -1,0 +1,32 @@
+📁 PASTA DE FOTOS DOS IMÓVEIS
+=============================
+
+Esta pasta será usada para armazenar fotos dos imóveis cadastrados.
+
+ORGANIZAÇÃO:
+- Crie uma subpasta para cada imóvel (ex: imovel-001/)
+- Coloque todas as fotos do imóvel dentro da sua pasta
+
+FORMATOS ACEITOS:
+- JPG/JPEG (recomendado)
+- PNG
+- WebP
+
+TAMANHO RECOMENDADO:
+- Resolução: 1200x800px
+- Proporção: 3:2 ou 16:9
+- Peso: otimize para web (máx 300kb por foto)
+
+EXEMPLO DE ESTRUTURA:
+imoveis/
+  ├── imovel-001/
+  │   ├── foto-principal.jpg
+  │   ├── foto-1.jpg
+  │   ├── foto-2.jpg
+  │   └── foto-3.jpg
+  ├── imovel-002/
+  │   └── ...
+
+DICA: Nomeie as fotos de forma organizada para facilitar o gerenciamento!
+
+

@@ -1,0 +1,32 @@
+📁 PASTA DA LOGO
+================
+
+Coloque aqui o arquivo da logo da Vladia Corretora.
+
+FORMATOS ACEITOS:
+- logo.png (recomendado - com fundo transparente)
+- logo.jpg
+- logo.svg (melhor qualidade)
+
+TAMANHO RECOMENDADO:
+- Largura: 200-400px
+- Altura: proporcional
+- Fundo: transparente (PNG)
+
+EXEMPLO DE NOME:
+- logo.png
+- logo-branca.png (se tiver versão clara)
+- logo-escura.png (se tiver versão escura)
+
+A logo será exibida:
+✓ No cabeçalho de todas as páginas
+✓ Na página inicial (Home)
+✓ No favicon do site
+
+
+
+
+
+
+
+

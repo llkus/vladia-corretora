@@ -1,0 +1,308 @@
+/* ===== CONTAINER PRINCIPAL ===== */
+.editar-perfil-container {
+  min-height: 100vh;
+  background-image: url('/assets/backgrounds/bg-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.editar-perfil-main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ===== CARD ===== */
+.editar-perfil-card {
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+/* ===== HEADER ===== */
+.editar-perfil-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.btn-voltar-perfil {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(26, 26, 26, 0.05);
+  color: #1a1a1a;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-voltar-perfil:hover {
+  background: rgba(26, 26, 26, 0.1);
+  transform: translateX(-3px);
+}
+
+.btn-voltar-perfil svg {
+  width: 20px;
+  height: 20px;
+}
+
+.editar-perfil-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.5rem 0;
+}
+
+.editar-perfil-header p {
+  font-size: 0.95rem;
+  color: rgba(26, 26, 26, 0.6);
+  margin: 0;
+}
+
+/* ===== ALERTS ===== */
+.alert {
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.alert-error {
+  background-color: #fee;
+  color: #c33;
+  border: 1px solid #fcc;
+}
+
+.alert-success {
+  background-color: #efe;
+  color: #3a3;
+  border: 1px solid #cfc;
+}
+
+/* ===== FORMULÁRIO ===== */
+.editar-perfil-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+}
+
+.form-section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.form-section h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.section-header-senha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.btn-toggle-senha {
+  background: transparent;
+  border: 1px solid rgba(26, 26, 26, 0.2);
+  color: #1a1a1a;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-toggle-senha:hover {
+  background: rgba(26, 26, 26, 0.05);
+  border-color: rgba(26, 26, 26, 0.3);
+}
+
+.btn-toggle-senha:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.form-group input {
+  padding: 0.9rem 1.1rem;
+  border: 2px solid rgba(26, 26, 26, 0.1);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #1a1a1a;
+  box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.05);
+}
+
+.form-group input:disabled {
+  background: rgba(26, 26, 26, 0.03);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* ===== AÇÕES DO FORMULÁRIO ===== */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-cancelar {
+  flex: 1;
+  padding: 1rem;
+  background: transparent;
+  border: 2px solid rgba(26, 26, 26, 0.2);
+  color: #1a1a1a;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-cancelar:hover {
+  background: rgba(26, 26, 26, 0.05);
+  border-color: rgba(26, 26, 26, 0.3);
+}
+
+.btn-salvar {
+  flex: 1;
+  padding: 1rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(26, 26, 26, 0.3);
+}
+
+.btn-salvar:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26, 26, 26, 0.4);
+}
+
+.btn-salvar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* Tablets */
+@media (max-width: 968px) {
+  .editar-perfil-main {
+    padding: 1.5rem;
+  }
+
+  .editar-perfil-card {
+    padding: 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .editar-perfil-main {
+    padding: 1rem;
+  }
+
+  .editar-perfil-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .editar-perfil-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .section-header-senha {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .btn-toggle-senha {
+    width: 100%;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .btn-cancelar,
+  .btn-salvar {
+    width: 100%;
+  }
+}
+
+/* Mobile Pequeno */
+@media (max-width: 480px) {
+  .editar-perfil-card {
+    padding: 1.2rem;
+  }
+
+  .editar-perfil-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .btn-voltar-perfil {
+    width: 35px;
+    height: 35px;
+  }
+
+  .btn-voltar-perfil svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+
+
+
+

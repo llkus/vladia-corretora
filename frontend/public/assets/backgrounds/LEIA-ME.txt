@@ -1,0 +1,32 @@
+📁 PASTA DE PLANOS DE FUNDO
+===========================
+
+Coloque aqui as imagens de plano de fundo do site.
+
+FORMATOS ACEITOS:
+- bg-hero.jpg (para a seção principal da home)
+- bg-main.jpg (fundo geral do site)
+- bg-pattern.png (padrão de fundo)
+
+TAMANHO RECOMENDADO:
+- Resolução: 1920x1080px ou maior
+- Formato: JPG (para fotos) ou PNG (para padrões)
+- Peso: otimize para web (máx 500kb)
+
+EXEMPLOS DE NOME:
+- bg-hero.jpg (banner principal)
+- bg-main.jpg (fundo geral)
+- bg-login.jpg (tela de login)
+
+Os planos de fundo serão usados em:
+✓ Hero section da página inicial
+✓ Fundo geral do site
+✓ Seções específicas
+
+
+
+
+
+
+
+

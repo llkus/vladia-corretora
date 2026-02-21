@@ -1,0 +1,1023 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home-container {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('/assets/backgrounds/bg-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: linear-gradient(135deg, rgba(45, 55, 50, 0.98) 0%, rgba(35, 45, 40, 0.98) 100%);
+  backdrop-filter: blur(10px);
+  padding: 1rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-start;
+  padding-left: 2rem;
+}
+
+.logo {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.area-corretor-btn {
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  color: #1a1a1a;
+  border: none;
+  padding: 0.6rem 2.5rem;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.area-corretor-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.area-corretor-btn:hover::before {
+  left: 100%;
+}
+
+.area-corretor-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+  padding: 2rem 3rem 5rem;
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ===== SEÇÃO DE BUSCA ===== */
+.search-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  background-color: transparent;
+  padding: 1rem 2rem;
+  gap: 2rem;
+}
+
+.main-title {
+  font-size: 1.7rem;
+  font-weight: 300;
+  color: #1a1a1a;
+  margin: 0;
+  letter-spacing: 0.5px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  white-space: nowrap;
+}
+
+.tipo-buttons-container {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.tipo-btn {
+  padding: 0.7rem 2.8rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  border: 2px solid transparent;
+  text-transform: uppercase;
+  min-width: 150px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tipo-btn.active {
+  background-color: #1a1a1a;
+  color: white;
+  border-color: #1a1a1a;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.tipo-btn:not(.active) {
+  background-color: white;
+  color: #1a1a1a;
+  border-color: #d0d0d0;
+}
+
+.tipo-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.2);
+}
+
+.tipo-btn.active:hover {
+  background-color: #2d2d2d;
+  box-shadow: 0 7px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== CONTADOR DE RESULTADOS ===== */
+.resultados-info {
+  margin: 0 auto 2rem;
+  text-align: center;
+  max-width: 600px;
+}
+
+.contador-resultados {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== GRID DE IMÓVEIS ===== */
+.imoveis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  justify-items: center;
+  animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.imovel-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  max-width: 290px;
+  animation: cardAppear 0.5s ease;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.imovel-card {
+  background-color: #ffffff !important;
+  border-radius: 24px;
+  overflow: visible;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  width: 100%;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.imovel-card-link:hover .imovel-card {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.imovel-image {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 20px;
+  margin-bottom: 0.9rem;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+.imovel-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+  border-radius: 20px;
+  display: block;
+}
+
+.imovel-card-link:hover .imovel-image img {
+  transform: scale(1.08);
+}
+
+.imovel-content {
+  padding: 0 0.7rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+.imovel-titulo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.7rem 0;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 2.6rem;
+  max-height: 2.6rem;
+}
+
+.imovel-location {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.7rem;
+  padding: 0.4rem 0.7rem;
+  background: linear-gradient(135deg, rgba(229, 57, 53, 0.08) 0%, rgba(229, 57, 53, 0.03) 100%);
+  border-radius: 10px;
+  border-left: 3px solid #E53935;
+}
+
+.location-icon {
+  width: 16px;
+  height: 16px;
+  color: #E53935;
+  flex-shrink: 0;
+}
+
+.bairro-nome {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #E53935;
+  letter-spacing: 0.2px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.imovel-caracteristicas {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.6rem 0;
+  flex-wrap: wrap;
+}
+
+.caracteristica-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #eef1f5 100%);
+  padding: 0.45rem 0.75rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.imovel-card-link:hover .caracteristica-item {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.carac-icon {
+  width: 18px;
+  height: 18px;
+  color: #5a6c7d;
+  flex-shrink: 0;
+}
+
+.caracteristica-item span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2c3e50;
+  letter-spacing: 0.2px;
+}
+
+.imovel-preco {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  margin: 0.7rem 0 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.imovel-card-link:hover .imovel-preco {
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+  transform: scale(1.02);
+}
+
+.preco-label {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.preco-valor {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.caracteristicas-list {
+  list-style: none;
+  margin: 0.8rem 0;
+  padding: 0;
+  flex: 1;
+  min-height: 120px;
+}
+
+.caracteristicas-list li {
+  padding: 0.3rem 0;
+  padding-left: 1rem;
+  position: relative;
+  font-size: 0.85rem;
+  color: #1a1a1a;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.caracteristicas-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #1a1a1a;
+  font-weight: 900;
+  font-size: 0.95rem;
+}
+
+.saiba-mais {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding: 0.7rem 1.2rem;
+  background: linear-gradient(135deg, #E53935 0%, #c62828 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(229, 57, 53, 0.3);
+  letter-spacing: 0.3px;
+}
+
+.saiba-mais svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.imovel-card-link:hover .saiba-mais {
+  background: linear-gradient(135deg, #c62828 0%, #b71c1c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 18px rgba(229, 57, 53, 0.4);
+}
+
+.imovel-card-link:hover .saiba-mais svg {
+  transform: translateX(3px);
+}
+
+/* ===== ESTADOS LOADING E VAZIO ===== */
+.loading-container,
+.empty-container {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: rgba(245, 242, 236, 0.9);
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.loading-container p,
+.empty-container p {
+  font-size: 1.2rem;
+  color: rgba(26, 26, 26, 0.6);
+  margin: 0;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* Desktop Grande */
+@media (min-width: 1400px) {
+  .main-content {
+    max-width: 1600px;
+  }
+
+  .imoveis-grid {
+    max-width: 1300px;
+  }
+}
+
+/* Tablets Grande */
+@media (max-width: 1200px) {
+  .imoveis-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    max-width: 700px;
+  }
+
+  .main-content {
+    padding: 2rem 2.5rem 4rem;
+  }
+
+  .header {
+    padding: 1rem 2.5rem;
+  }
+
+  .search-section {
+    padding: 1rem 2rem;
+  }
+
+  .imovel-card-link {
+    max-width: 320px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 968px) {
+  .header {
+    padding: 1rem 2rem;
+  }
+
+  .logo-container {
+    padding-left: 1rem;
+  }
+
+  .logo {
+    height: 48px;
+  }
+
+  .area-corretor-btn {
+    padding: 0.6rem 2rem;
+    font-size: 0.8rem;
+  }
+
+  .main-content {
+    padding: 1.5rem 2rem 4rem;
+  }
+
+  .search-section {
+    padding: 1rem 1.5rem;
+  }
+
+  .main-title {
+    font-size: 1.5rem;
+  }
+
+  .tipo-btn {
+    padding: 0.65rem 2.3rem;
+    font-size: 0.85rem;
+    min-width: 140px;
+  }
+
+  .imoveis-grid {
+    gap: 2rem;
+  }
+}
+
+/* Mobile Large - Grid Estilo Instagram */
+@media (max-width: 768px) {
+  .home-container {
+    background-color: #fafafa;
+    background-image: none;
+  }
+
+  .home-container .main-content .imoveis-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 3px !important;
+    width: 100%;
+  }
+
+  .home-container .main-content .imoveis-grid .imovel-card-link {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+  }
+
+  .home-container .main-content .imoveis-grid .imovel-card {
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    display: block;
+  }
+
+  .header {
+    padding: 0.8rem 1rem;
+    position: fixed;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .logo-container {
+    padding-left: 0;
+  }
+
+  .logo {
+    height: 42px;
+  }
+
+  .area-corretor-btn {
+    padding: 0.55rem 1.5rem;
+    font-size: 0.75rem;
+    border-radius: 20px;
+  }
+
+  /* Espaçamento para header fixo */
+  .main-content {
+    padding: 90px 0 2rem 0;
+    max-width: 100%;
+  }
+
+  /* Seção de busca estilo Instagram */
+  .search-section {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 1rem 1.5rem;
+    background: white;
+    border-radius: 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid #dbdbdb;
+    position: sticky;
+    top: 70px;
+    z-index: 50;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  .main-title {
+    font-size: 1.3rem;
+    margin: 0;
+    text-align: center;
+    font-weight: 600;
+    color: #262626;
+  }
+
+  /* Botões estilo Stories */
+  .tipo-buttons-container {
+    width: 100%;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .tipo-btn {
+    flex: 1;
+    max-width: 180px;
+    padding: 0.7rem 1.5rem;
+    min-width: auto;
+    font-size: 0.8rem;
+    border-radius: 25px;
+  }
+
+  /* Contador */
+  .resultados-info {
+    margin: 1rem 0 0.5rem;
+    padding: 0 1rem;
+  }
+
+  .contador-resultados {
+    font-size: 0.85rem;
+    color: #8e8e8e;
+    font-weight: 600;
+  }
+
+  /* Grid 3x3 estilo Perfil do Instagram */
+  .imoveis-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 3px;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    background: white;
+  }
+
+  .imovel-card-link {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 0;
+    aspect-ratio: 1 !important;
+  }
+
+  /* Card estilo Grid do Instagram */
+  .imovel-card {
+    border-radius: 0;
+    background: #f5f2ec !important;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    height: 100%;
+    margin-bottom: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .imovel-card-link:hover .imovel-card {
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* Imagem quadrada estilo Grid */
+  .imovel-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    margin-bottom: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .imovel-image img {
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .imovel-card-link:hover .imovel-image img {
+    transform: scale(1.05);
+    filter: brightness(0.9);
+  }
+
+  /* Overlay com informações ao hover */
+  .imovel-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0.8rem;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.75) 70%);
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+    gap: 0.4rem;
+  }
+
+  .imovel-titulo {
+    font-size: 0.85rem;
+    color: white;
+    margin: 0;
+    font-weight: 700;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: auto;
+  }
+
+  .imovel-location {
+    margin-bottom: 0.2rem;
+    background: rgba(229, 57, 53, 0.85);
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    border-left: none;
+  }
+
+  .location-icon {
+    width: 14px;
+    height: 14px;
+    color: white;
+  }
+
+  .bairro-nome {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  .imovel-caracteristicas {
+    display: none;
+  }
+
+  .caracteristicas-list {
+    display: none;
+  }
+
+  .imovel-preco {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  .preco-label {
+    font-size: 0.55rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .preco-valor {
+    font-size: 0.95rem;
+    color: #ffffff;
+    font-weight: 800;
+  }
+
+  .saiba-mais {
+    font-size: 0.65rem;
+    padding: 0.4rem 0.9rem;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 999px;
+    margin-top: 0;
+  }
+
+  .saiba-mais svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Estados */
+  .loading-container,
+  .empty-container {
+    grid-column: 1 / -1;
+    border-radius: 0;
+    margin: 1rem;
+    padding: 3rem 1.5rem;
+  }
+}
+
+/* Mobile Medium */
+@media (max-width: 600px) {
+  .home-container .main-content .imoveis-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .header {
+    padding: 0.7rem 0.8rem;
+  }
+
+  .logo {
+    height: 38px;
+  }
+
+  .area-corretor-btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.7rem;
+  }
+
+  .main-content {
+    padding-top: 85px;
+  }
+
+  .search-section {
+    padding: 0.8rem 0.8rem 1.2rem;
+    top: 65px;
+  }
+
+  .main-title {
+    font-size: 1.2rem;
+  }
+
+  .tipo-btn {
+    padding: 0.65rem 1.3rem;
+    font-size: 0.75rem;
+  }
+
+  /* Grid 3x3 mantido */
+  .imoveis-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2px;
+  }
+
+  .imovel-card-link {
+    aspect-ratio: 1 !important;
+  }
+
+  .imovel-content {
+    padding: 0.6rem;
+  }
+
+  .bairro-nome {
+    font-size: 0.75rem;
+  }
+
+  .saiba-mais {
+    font-size: 0.7rem;
+  }
+}
+
+/* Mobile Small */
+@media (max-width: 480px) {
+  .home-container .main-content .imoveis-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .header {
+    padding: 0.6rem 0.6rem;
+    flex-wrap: nowrap;
+  }
+
+  .logo {
+    height: 35px;
+  }
+
+  .area-corretor-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.65rem;
+    white-space: nowrap;
+  }
+
+  .main-content {
+    padding: 80px 0 2rem 0;
+  }
+
+  .search-section {
+    padding: 0.7rem 0.7rem 1rem;
+    top: 60px;
+  }
+
+  .main-title {
+    font-size: 1.1rem;
+  }
+
+  .tipo-buttons-container {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .tipo-btn {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.7rem 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  /* Grid 3x3 mantido */
+  .imoveis-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2px;
+  }
+
+  .imovel-card-link {
+    aspect-ratio: 1 !important;
+  }
+
+  .imovel-content {
+    padding: 0.5rem;
+  }
+
+  .bairro-nome {
+    font-size: 0.7rem;
+  }
+
+  .location-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .saiba-mais {
+    font-size: 0.65rem;
+  }
+}
+
+/* Mobile Extra Small */
+@media (max-width: 360px) {
+  .home-container .main-content .imoveis-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .logo {
+    height: 32px;
+  }
+
+  .area-corretor-btn {
+    font-size: 0.6rem;
+    padding: 0.45rem 0.8rem;
+  }
+
+  .main-title {
+    font-size: 1rem;
+  }
+
+  /* Grid 3x3 mantido */
+  .imoveis-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1px;
+  }
+
+  .imovel-card-link {
+    aspect-ratio: 1 !important;
+  }
+
+  .imovel-content {
+    padding: 0.4rem;
+  }
+
+  .bairro-nome {
+    font-size: 0.65rem;
+  }
+
+  .location-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .saiba-mais {
+    font-size: 0.6rem;
+  }
+}
