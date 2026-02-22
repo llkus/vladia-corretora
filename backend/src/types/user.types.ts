@@ -5,8 +5,8 @@ export interface User {
   senha: string
   telefone?: string
   tipo: 'admin' | 'corretor' | 'cliente'
-  criadoEm: Date
-  atualizadoEm: Date
+  criado_em: Date
+  atualizado_em: Date
 }
 
 export interface UserDTO {

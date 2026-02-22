@@ -43,8 +43,8 @@ export const register = async (req: Request, res: Response): Promise<any> => {
       senha: hashedPassword,
       telefone,
       tipo: tipo || 'cliente',
-      criadoEm: new Date(),
-      atualizadoEm: new Date()
+      criado_em: new Date(),
+      atualizado_em: new Date()
     })
 
     // Gerar token
@@ -168,7 +168,7 @@ export const updateProfile = async (req: Request, res: Response): Promise<any> =
       nome,
       email,
       telefone,
-      atualizadoEm: new Date()
+      atualizado_em: new Date()
     }
 
     // Se está alterando senha
