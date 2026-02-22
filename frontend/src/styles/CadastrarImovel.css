@@ -876,6 +876,10 @@
     width: 100%;
     justify-content: center;
   }
+
+  .valores-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Mobile Pequeno */
