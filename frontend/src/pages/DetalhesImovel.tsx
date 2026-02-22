@@ -42,7 +42,7 @@ function DetalhesImovel() {
   const buscarImovel = async () => {
     try {
       setLoading(true)
-      const response = await axios.get(`http://localhost:5000/api/imoveis/${id}`)
+      const response = await axios.get(`/api/imoveis/${id}`)
       setImovel(response.data)
       setErro(false)
     } catch (error) {

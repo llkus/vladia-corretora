@@ -29,7 +29,7 @@ function Imoveis() {
 
   const buscarImoveis = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/imoveis')
+      const response = await axios.get('/api/imoveis')
       setImoveis(response.data)
     } catch (error) {
       console.error('Erro ao buscar imóveis:', error)

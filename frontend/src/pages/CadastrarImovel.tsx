@@ -82,7 +82,7 @@ function CadastrarImovel() {
     try {
       const enderecoCompleto = `${formData.rua}, ${formData.numero}, ${formData.bairro}, ${formData.cidade} - ${formData.estado}`
 
-      const response = await axios.post('http://localhost:5000/api/maps/geocode', {
+      const response = await axios.post('/api/maps/geocode', {
         endereco: enderecoCompleto
       })
 
@@ -225,7 +225,7 @@ function CadastrarImovel() {
         status: formData.disponibilidade
       }
 
-      await axios.post('http://localhost:5000/api/imoveis', imovelData)
+      await axios.post('/api/imoveis', imovelData)
 
       alert('Imovel cadastrado com sucesso!')
       navigate('/area-corretor')

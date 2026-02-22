@@ -57,7 +57,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   const login = async (email: string, senha: string) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      const response = await axios.post('/api/auth/login', {
         email,
         senha
       })
@@ -81,7 +81,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   const register = async (nome: string, email: string, senha: string, telefone?: string) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', {
+      const response = await axios.post('/api/auth/register', {
         nome,
         email,
         senha,
@@ -107,7 +107,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   const updateProfile = async (nome: string, email: string, telefone?: string, senhaAtual?: string, novaSenha?: string) => {
     try {
-      const response = await axios.put('http://localhost:5000/api/auth/profile', {
+      const response = await axios.put('/api/auth/profile', {
         nome,
         email,
         telefone,

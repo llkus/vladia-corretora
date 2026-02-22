@@ -43,7 +43,7 @@ function EditarImovel() {
   const buscarImovel = async () => {
     try {
       setCarregando(true)
-      const response = await axios.get(`http://localhost:5000/api/imoveis/${id}`)
+      const response = await axios.get(`/api/imoveis/${id}`)
       const imovel = response.data
 
       const enderecoCompleto = imovel.endereco || ''
@@ -107,7 +107,7 @@ function EditarImovel() {
     try {
       const enderecoCompleto = `${formData.rua}, ${formData.numero}, ${formData.bairro}, ${formData.cidade} - ${formData.estado}`
 
-      const response = await axios.post('http://localhost:5000/api/maps/geocode', {
+      const response = await axios.post('/api/maps/geocode', {
         endereco: enderecoCompleto
       })
 
@@ -214,7 +214,7 @@ function EditarImovel() {
         status: formData.status,
       }
 
-      await axios.put(`http://localhost:5000/api/imoveis/${id}`, imovelData)
+      await axios.put(`/api/imoveis/${id}`, imovelData)
 
       alert('Imovel atualizado com sucesso!')
       navigate('/area-corretor')
@@ -238,7 +238,7 @@ function EditarImovel() {
     setExcluindo(true)
 
     try {
-      await axios.delete(`http://localhost:5000/api/imoveis/${id}`)
+      await axios.delete(`/api/imoveis/${id}`)
       alert('Imovel excluido com sucesso!')
       navigate('/area-corretor')
     } catch (error: any) {
